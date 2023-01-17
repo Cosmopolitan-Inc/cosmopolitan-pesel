@@ -1,0 +1,6 @@
+# This file implements GitHub CODEOWNERS feature
+# Code Owners are automatically requested for review when someone
+# opens a pull request that modifies code that they own.
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+*       @tomczak-mateusz
