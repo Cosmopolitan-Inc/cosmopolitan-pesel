@@ -26,3 +26,6 @@ jobs:
 
     - name: Run Bundler Audit dependencies verification
       run: bundle exec bundler-audit check --update
+
+    - name: Run Gems checksums verification between RubyGems and Bundler
+      run: bundle exec bundler-integrity
