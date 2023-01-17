@@ -2,6 +2,6 @@
 
 module Cosmopolitan
   module PeselValidator
-    VERSION = "0.1.0"
+    VERSION = '0.1.0'
   end
 end
