@@ -9,6 +9,7 @@ GEM
     bundler-audit (0.9.1)
       bundler (>= 1.2.0, < 3)
       thor (~> 1.0)
+    bundler-integrity (1.0.9)
     diff-lcs (1.5.0)
     rake (13.0.6)
     rspec (3.12.0)
@@ -31,6 +32,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler-audit (= 0.9.1)
+  bundler-integrity (= 1.0.9)
   cosmopolitan-pesel_validator!
   rake (= 13.0.6)
   rspec (= 3.12.0)

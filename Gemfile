@@ -15,4 +15,5 @@ end
 
 group :development, :test do
   gem 'bundler-audit', '0.9.1'
+  gem 'bundler-integrity', '1.0.9'
 end
