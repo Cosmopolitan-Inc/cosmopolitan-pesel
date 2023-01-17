@@ -5,5 +5,10 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in cosmopolitan-pesel_validator.gemspec
 gemspec
 
-gem 'rake', '13.0.6'
-gem 'rspec', '3.12.0'
+group :development do
+  gem 'rake', '13.0.6'
+end
+
+group :test do
+  gem 'rspec', '3.12.0'
+end
