@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe Cosmopolitan::PeselValidator do
-  it "has a version number" do
-    expect(Cosmopolitan::PeselValidator::VERSION).not_to be nil
+  it "version is equal to 0.1.0" do
+    expect(Cosmopolitan::PeselValidator::VERSION).to eq("0.1.0")
   end
 end
