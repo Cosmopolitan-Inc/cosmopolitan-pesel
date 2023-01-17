@@ -12,3 +12,7 @@ end
 group :test do
   gem 'rspec', '3.12.0'
 end
+
+group :development, :test do
+  gem 'bundler-audit', '0.9.1'
+end

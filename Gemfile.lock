@@ -6,6 +6,9 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    bundler-audit (0.9.1)
+      bundler (>= 1.2.0, < 3)
+      thor (~> 1.0)
     diff-lcs (1.5.0)
     rake (13.0.6)
     rspec (3.12.0)
@@ -21,11 +24,13 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
     rspec-support (3.12.0)
+    thor (1.2.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler-audit (= 0.9.1)
   cosmopolitan-pesel_validator!
   rake (= 13.0.6)
   rspec (= 3.12.0)
