@@ -23,3 +23,6 @@ jobs:
 
     - name: Run RSpec testing
       run: bundle exec rspec
+
+    - name: Run Bundler Audit dependencies verification
+      run: bundle exec bundler-audit check --update
