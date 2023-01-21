@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.metadata['allowed_push_host'] = 'Placeholder'
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://placeholder.com'
+  spec.metadata['source_code_uri'] = 'https://github.com/tomczak-mateusz/cosmopolitan-pesel_validator'
   spec.metadata['changelog_uri'] = 'https://placeholder.com'
 
   # Specify which files should be added to the gem when it is released.
