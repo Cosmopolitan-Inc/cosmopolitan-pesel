@@ -8,7 +8,7 @@ module Cosmopolitan
       end
 
       def call
-        @value.is_a?(Integer) ? last_digit.to_i : last_digit
+        value.is_a?(Integer) ? last_digit.to_i : last_digit
       end
 
       private
@@ -16,7 +16,7 @@ module Cosmopolitan
       attr_reader :value
 
       def last_digit
-        @value.to_s.split('').last
+        value.to_s.split('').last
       end
     end
   end
