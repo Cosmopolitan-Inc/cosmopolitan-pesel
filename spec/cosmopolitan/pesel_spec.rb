@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-RSpec.describe Cosmopolitan::PeselValidator do
+RSpec.describe Cosmopolitan::Pesel do
   it 'returns version equal to 0.1.0' do
-    expect(Cosmopolitan::PeselValidator::VERSION).to eq('0.1.0')
+    expect(Cosmopolitan::Pesel::VERSION).to eq('0.1.0')
   end
 
   # -----------------------------------------------------------------------------------------------------

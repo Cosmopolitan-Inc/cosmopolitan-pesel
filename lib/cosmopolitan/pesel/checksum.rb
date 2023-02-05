@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Cosmopolitan
-  module PeselValidator
+  module Pesel
     class Checksum
       def initialize(value)
         @value = value

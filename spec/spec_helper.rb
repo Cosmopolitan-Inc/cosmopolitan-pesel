@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'cosmopolitan/pesel_validator'
+require 'cosmopolitan/pesel'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

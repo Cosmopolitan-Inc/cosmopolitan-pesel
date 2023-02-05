@@ -3,7 +3,7 @@
 require_relative 'errors/invalid_value_error'
 
 module Cosmopolitan
-  module PeselValidator
+  module Pesel
     class ValidateValueFormat
       def initialize(value)
         @value = value
