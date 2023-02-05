@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = 'Placeholder'
   spec.description = 'Placeholder'
-  spec.homepage = 'https://placeholder.com'
+  spec.homepage = 'https://github.com/tomczak-mateusz/cosmopolitan-pesel'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 2.7.6'
 
