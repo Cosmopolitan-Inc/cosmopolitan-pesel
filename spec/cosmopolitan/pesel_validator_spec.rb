@@ -5,6 +5,8 @@ RSpec.describe Cosmopolitan::PeselValidator do
     expect(Cosmopolitan::PeselValidator::VERSION).to eq('0.1.0')
   end
 
+  # -----------------------------------------------------------------------------------------------------
+
   describe '#check_digit?' do
     subject { described_class.check_digit?(value) }
 
@@ -82,4 +84,242 @@ RSpec.describe Cosmopolitan::PeselValidator do
       end
     end
   end
+
+  # -----------------------------------------------------------------------------------------------------
+
+  describe '#gender?' do
+    subject { described_class.gender?(value) }
+
+    context 'when value is neither of integer or string type' do
+      let(:value) { 12345678910.0 }
+
+      it 'raises InvalidValueError with "Value must be of a type integer or string" message' do
+        expect { subject }.to raise_error(InvalidValueError, 'Value must be of a type integer or string')
+      end
+    end
+
+    context 'when value is of integer type' do
+      context 'when value length is not equal to 11 characters' do
+        context 'when value length is higher than 11 characters' do
+          let(:value) { 1234567891011 }
+
+          it 'raises InvalidValueError with "Value length must be equal to 11 characters" message' do
+            expect { subject }.to raise_error(InvalidValueError, 'Value length must be equal to 11 characters')
+          end
+        end
+
+        context 'when value length is lower than 11 characters' do
+          let(:value) { 12345 }
+
+          it 'raises InvalidValueError with "Value length must be equal to 11 characters" message' do
+            expect { subject }.to raise_error(InvalidValueError, 'Value length must be equal to 11 characters')
+          end
+        end
+      end
+
+      context 'when value length is equal to 11 characters' do
+        context 'when gender digit (10th) is even' do
+          context 'when gender digit is 0' do
+            let(:value) { 12345678906 }
+
+            it 'returns female value' do
+              expect(subject).to eq('female')
+            end
+          end
+
+          context 'when gender digit is 2' do
+            let(:value) { 12345678926 }
+
+            it 'returns female value' do
+              expect(subject).to eq('female')
+            end
+          end
+
+          context 'when gender digit is 4' do
+            let(:value) { 12345678946 }
+
+            it 'returns female value' do
+              expect(subject).to eq('female')
+            end
+          end
+
+          context 'when gender digit is 6' do
+            let(:value) { 12345678966 }
+
+            it 'returns female value' do
+              expect(subject).to eq('female')
+            end
+          end
+
+          context 'when gender digit is 8' do
+            let(:value) { 12345678986 }
+
+            it 'returns female value' do
+              expect(subject).to eq('female')
+            end
+          end
+        end
+
+        context 'when gender digit (10th) is odd' do
+          context 'when gender digit is 1' do
+            let(:value) { 12345678916 }
+
+            it 'returns male value' do
+              expect(subject).to eq('male')
+            end
+          end
+
+          context 'when gender digit is 3' do
+            let(:value) { 12345678936 }
+
+            it 'returns male value' do
+              expect(subject).to eq('male')
+            end
+          end
+
+          context 'when gender digit is 5' do
+            let(:value) { 12345678956 }
+
+            it 'returns male value' do
+              expect(subject).to eq('male')
+            end
+          end
+
+          context 'when gender digit is 7' do
+            let(:value) { 12345678976 }
+
+            it 'returns male value' do
+              expect(subject).to eq('male')
+            end
+          end
+
+          context 'when gender digit is 9' do
+            let(:value) { 12345678996 }
+
+            it 'returns male value' do
+              expect(subject).to eq('male')
+            end
+          end
+        end
+      end
+    end
+
+    context 'when value is of string type' do
+      context 'when value length is not equal to 11 characters' do
+        context 'when value length is higher than 11 characters' do
+          let(:value) { '1234567891011' }
+
+          it 'raises InvalidValueError with "Value length must be equal to 11 characters" message' do
+            expect { subject }.to raise_error(InvalidValueError, 'Value length must be equal to 11 characters')
+          end
+        end
+
+        context 'when value length is lower than 11 characters' do
+          let(:value) { '12345' }
+
+          it 'raises InvalidValueError with "Value length must be equal to 11 characters" message' do
+            expect { subject }.to raise_error(InvalidValueError, 'Value length must be equal to 11 characters')
+          end
+        end
+      end
+
+      context 'when value length is equal to 11 characters' do
+        context 'when value contains letters' do
+          let(:value) { '12345a78916' }
+
+          it 'raises InvalidValueError with "Value must contain only digits" message' do
+            expect { subject }.to raise_error(InvalidValueError, 'Value must contain only digits')
+          end
+        end
+
+        context 'when value contains only digits' do
+          context 'when gender digit (10th) is even' do
+            context 'when gender digit is 0' do
+              let(:value) { '12345678906' }
+
+              it 'returns female value' do
+                expect(subject).to eq('female')
+              end
+            end
+
+            context 'when gender digit is 2' do
+              let(:value) { '12345678926' }
+
+              it 'returns female value' do
+                expect(subject).to eq('female')
+              end
+            end
+
+            context 'when gender digit is 4' do
+              let(:value) { '12345678946' }
+
+              it 'returns female value' do
+                expect(subject).to eq('female')
+              end
+            end
+
+            context 'when gender digit is 6' do
+              let(:value) { '12345678966' }
+
+              it 'returns female value' do
+                expect(subject).to eq('female')
+              end
+            end
+
+            context 'when gender digit is 8' do
+              let(:value) { '12345678986' }
+
+              it 'returns female value' do
+                expect(subject).to eq('female')
+              end
+            end
+          end
+
+          context 'when gender digit (10th) is odd' do
+            context 'when gender digit is 1' do
+              let(:value) { '12345678916' }
+
+              it 'returns male value' do
+                expect(subject).to eq('male')
+              end
+            end
+
+            context 'when gender digit is 3' do
+              let(:value) { '12345678936' }
+
+              it 'returns male value' do
+                expect(subject).to eq('male')
+              end
+            end
+
+            context 'when gender digit is 5' do
+              let(:value) { '12345678956' }
+
+              it 'returns male value' do
+                expect(subject).to eq('male')
+              end
+            end
+
+            context 'when gender digit is 7' do
+              let(:value) { '12345678976' }
+
+              it 'returns male value' do
+                expect(subject).to eq('male')
+              end
+            end
+
+            context 'when gender digit is 9' do
+              let(:value) { '12345678996' }
+
+              it 'returns male value' do
+                expect(subject).to eq('male')
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+
+  # -----------------------------------------------------------------------------------------------------
 end
