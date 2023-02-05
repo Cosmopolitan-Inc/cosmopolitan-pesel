@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Cosmopolitan
-  module PeselValidator
+  module Pesel
     class CheckDigit
       def initialize(value)
         @value = value

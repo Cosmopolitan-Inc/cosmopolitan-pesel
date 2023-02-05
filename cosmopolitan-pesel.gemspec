@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative 'lib/cosmopolitan/pesel_validator/version'
+require_relative 'lib/cosmopolitan/pesel/version'
 
 Gem::Specification.new do |spec|
-  spec.name = 'cosmopolitan-pesel_validator'
-  spec.version = Cosmopolitan::PeselValidator::VERSION
+  spec.name = 'cosmopolitan-pesel'
+  spec.version = Cosmopolitan::Pesel::VERSION
   spec.authors = ['tomczak-mateusz']
   spec.email = ['mateusz.tomczak@sperasoft.com']
 
@@ -17,8 +17,8 @@ Gem::Specification.new do |spec|
   spec.metadata['allowed_push_host'] = 'Placeholder'
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://github.com/tomczak-mateusz/cosmopolitan-pesel_validator'
-  spec.metadata['changelog_uri'] = 'https://github.com/tomczak-mateusz/cosmopolitan-pesel_validator/blob/main/CHANGELOG.md'
+  spec.metadata['source_code_uri'] = 'https://github.com/tomczak-mateusz/cosmopolitan-pesel'
+  spec.metadata['changelog_uri'] = 'https://github.com/tomczak-mateusz/cosmopolitan-pesel/blob/main/CHANGELOG.md'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

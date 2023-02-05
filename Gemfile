@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in cosmopolitan-pesel_validator.gemspec
+# Specify your gem's dependencies in cosmopolitan-pesel.gemspec
 gemspec
 
 group :development do

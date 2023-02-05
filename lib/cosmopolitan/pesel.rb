@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-require_relative 'pesel_validator/check_digit'
-require_relative 'pesel_validator/checksum'
-require_relative 'pesel_validator/gender'
-require_relative 'pesel_validator/validate'
-require_relative 'pesel_validator/validate_value_format'
-require_relative 'pesel_validator/version'
+require_relative 'pesel/check_digit'
+require_relative 'pesel/checksum'
+require_relative 'pesel/gender'
+require_relative 'pesel/validate'
+require_relative 'pesel/validate_value_format'
+require_relative 'pesel/version'
 
 module Cosmopolitan
-  module PeselValidator
+  module Pesel
     def self.check_digit?(value)
       ValidateValueFormat.new(value).call
       CheckDigit.new(value).call
