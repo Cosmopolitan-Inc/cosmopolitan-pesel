@@ -3,6 +3,7 @@
 require_relative 'pesel_validator/check_digit'
 require_relative 'pesel_validator/checksum'
 require_relative 'pesel_validator/gender'
+require_relative 'pesel_validator/validate'
 require_relative 'pesel_validator/validate_value_format'
 require_relative 'pesel_validator/version'
 
@@ -21,6 +22,11 @@ module Cosmopolitan
     def self.gender?(value)
       ValidateValueFormat.new(value).call
       Gender.new(value).call
+    end
+
+    def self.valid?(value)
+      ValidateValueFormat.new(value).call
+      Validate.new(value).call
     end
   end
 end
